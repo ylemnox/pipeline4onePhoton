@@ -1,0 +1,11 @@
+This module (pipeline_b/) uses CaImAn for CNMF-E processing.
+
+CaImAn is licensed under the GNU General Public License v2.0 (GPL-2.0).
+Source: https://github.com/flatironinstitute/CaImAn
+
+The code in this module that directly interfaces with CaImAn is subject
+to GPL-2.0 terms. If you redistribute or modify this module, you must
+comply with GPL-2.0 requirements.
+
+For the full GPL-2.0 license text, see:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html

@@ -1,0 +1,162 @@
+# 1p-spatial-pipeline Configuration
+# Copy this file to config.yaml and edit for your experiment
+# See documentation at: https://github.com/ylemnox/1p-spatial-pipeline
+
+# =============================================================================
+# EXPERIMENT SETTINGS
+# =============================================================================
+experiment:
+  name: "MY01_20251231"
+  output_dir: "./output/MY01_20251231"
+
+# =============================================================================
+# PIPELINE A OUTPUT (DeepLabCut - processed externally)
+# =============================================================================
+# DeepLabCut must be run separately. Provide the output CSV here.
+behavior:
+  # Path to DeepLabCut output CSV (frame, x, y, likelihood)
+  position_csv: "/Users/davisk/Desktop/cnmf-E/deepLabCut_result_MY01_20251231.csv"
+
+  # Filter threshold for DLC predictions (0-1)
+  likelihood_threshold: 0.9
+
+  # Linear track length in cm
+  track_length_cm: 48
+
+  # Set true if left/right directions are reversed in your setup
+  flip_direction: false
+
+  # Webcam frame rate for temporal alignment
+  webcam_fps: 32.0
+
+# =============================================================================
+# PIPELINE B: CNMF-E (CaImAn) - Optional
+# =============================================================================
+# Provide pre-computed MAT file from notebooks/cnmfE_pipeline.ipynb
+cnmfe:
+  # Path to pre-computed CNMF-E MAT file
+  mat_file: "/Users/davisk/Desktop/cnmf-E/MY01_20251231_260122analyzed_data.mat"
+
+  # Directory containing miniscope .avi videos (for reference)
+  video_dir: "/Users/davisk/Desktop/miniscope/MY01_20251231/My_V4_Miniscope"
+
+  # Miniscope frame rate in Hz
+  frame_rate: 20
+
+  # --- CNMF-E Parameters (adjust based on your data) ---
+  # Gaussian kernel size for cell detection (half-width in pixels)
+  gSig: [4, 4]
+
+  # Average neuron size (diameter in pixels)
+  gSiz: [13, 13]
+
+  # Minimum local correlation for cell detection
+  min_corr: 0.8
+
+  # Minimum peak-to-noise ratio
+  min_pnr: 10
+
+  # Spatial downsampling factor
+  ssub: 2
+
+  # Temporal downsampling factor
+  tsub: 2
+
+  # Order of AR model for deconvolution (1 or 2)
+  p: 1
+
+  # Merging threshold for overlapping components
+  merge_thr: 0.85
+
+  # Half-size of patch for parallel processing
+  rf: 40
+
+  # Overlap between patches
+  stride: 20
+
+  # --- Component Evaluation ---
+  min_SNR: 3
+  rval_thr: 0.85
+  use_cnn: true
+  min_cnn_thr: 0.99
+  cnn_lowest: 0.1
+
+# =============================================================================
+# PIPELINE C: NIDQ Signals
+# =============================================================================
+nidq:
+  # Path to NIDQ binary file
+  bin_file: "/Users/davisk/Desktop/cnmf-E/20251231_MY01_rightM1_D-1_g0_t0.nidq.bin"
+
+  # Path to NIDQ metadata file
+  meta_file: "/Users/davisk/Desktop/cnmf-E/20251231_MY01_rightM1_D-1_g0_t0.nidq.meta"
+
+  # --- Channel Assignments (determine via '1p-spatial-pipeline nidq' command) ---
+  # Bit number for miniscope sync signal
+  sync_bit: 2
+
+  # Bit number for webcam trigger signal
+  trigger_bit: 1
+
+  # Bit number for left reward signal
+  reward_left_bit: 4
+
+  # Bit number for right reward signal
+  reward_right_bit: 3
+
+# =============================================================================
+# METADATA (Optional)
+# =============================================================================
+metadata:
+  # Path to Miniscope DAQ metaData.json
+  json_file: "/Users/davisk/Desktop/miniscope/MY01_20251231/metaData.json"
+
+# =============================================================================
+# PIPELINE E: Active Cell Extraction
+# =============================================================================
+extraction:
+  # Pixel size for spatial calculations (um/pixel)
+  pixel_size_um: 1.67
+
+  # Distance threshold for neighbor detection (um)
+  neighbor_distance_um: 15
+
+  # Correlation threshold for duplicate cell removal
+  correlation_threshold: 0.9
+
+  # --- C Mode Parameters (denoised calcium traces) ---
+  # Minimum separation between events (ms)
+  temporal_window_ms: 300
+
+  # Amplitude threshold (multiples of noise level)
+  amplitude_threshold_sigma: 4
+
+  # Direction mapping (from trial data to L/R)
+  direction_map:
+    0: "R"
+    1: "L"
+
+# =============================================================================
+# PIPELINE F: Place Field Analysis
+# =============================================================================
+analysis:
+  # Number of spatial bins (track_length / n_bins = bin size in cm)
+  n_bins: 48
+
+  # Gaussian smoothing sigma (cm)
+  smoothing_sigma_cm: 4.5
+
+  # Minimum speed for valid movement (cm/s)
+  min_speed_cm_s: 0.5
+
+  # Reward zone exclusion at each end (cm)
+  reward_zone_cm: 1.5
+
+  # Bin size for mutual information calculation (cm)
+  mi_bin_size_cm: 4
+
+  # Number of shuffle iterations for significance testing
+  n_shuffles: 10000
+
+  # P-value threshold for place cell identification
+  p_threshold: 0.05
