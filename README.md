@@ -89,7 +89,7 @@ DeepLabCut must be run separately. See [docs/pipeline_a_deeplabcut.md](docs/pipe
 
 Run CaImAn's CNMF-E algorithm via the provided Colab notebook. See [docs/pipeline_b_caiman_setup.md](docs/pipeline_b_caiman_setup.md) for detailed instructions.
 
-**Notebook**: `notebooks/cnmfE_pipeline.ipynb` (Google Colab with GPU recommended)
+**Notebook**: `notebooks/cnmfE_pipeline.ipynb`
 
 **Input**: Miniscope .avi videos
 **Output**: MAT file with C, S, spatial components
