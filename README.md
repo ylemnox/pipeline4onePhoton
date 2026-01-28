@@ -26,27 +26,8 @@ Pipeline Overview:
 ### Place Cell Heatmap (Left Direction)
 Place fields sorted by peak location, showing spatial tuning of identified place cells:
 
-<img src="examples/place_cells_heatmap_L_S.png" width="600">
+<img src="examples/place_cells_heatmap_L_S.png" width="300">
 
-### Combined L/R Direction Comparison
-L-place cells shown in both directions with joint normalization to compare directional selectivity:
-
-<img src="examples/combined_heatmap_sorted_by_L_S.png" width="700">
-
-### Session-Wide Firing Rate
-Normalized firing rate across all trials aggregated by position:
-
-<img src="examples/session_firing_rate_normalized_S.png" width="600">
-
-### Summary Statistics
-Overview of place cell identification results including mutual information distribution:
-
-<img src="examples/place_cell_summary_S.png" width="700">
-
-### NIDQ Channel Visualization
-Digital channel preview for identifying sync, trigger, and reward signals:
-
-<img src="examples/nidq_channel_preview.png" width="600">
 
 ## Installation
 
