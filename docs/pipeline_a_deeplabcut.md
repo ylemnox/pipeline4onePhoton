@@ -1,6 +1,6 @@
 # Pipeline A: Behavior Extraction with DeepLabCut
 
-This document describes how to use DeepLabCut for behavior extraction from webcam videos. This pipeline runs **externally** and provides a CSV file as input to the main 1p-spatial-pipeline.
+This document describes how to use DeepLabCut for behavior extraction from webcam videos. This pipeline runs **externally** and provides a CSV file as input to the main pipeline4onePhoton.
 
 ## Overview
 
@@ -190,9 +190,9 @@ print(f"Saved to {output_path}")
      track_length_cm: 48
    ```
 
-3. Run the 1p-spatial-pipeline:
+3. Run the pipeline4onePhoton:
    ```bash
-   1p-spatial-pipeline merge --config config.yaml
+   pipeline4onePhoton merge --config config.yaml
    ```
 
 ## Output Format

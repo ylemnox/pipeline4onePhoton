@@ -90,10 +90,10 @@ Then run the downstream pipelines:
 
 ```bash
 # Merge data (Pipeline D)
-1p-spatial-pipeline merge --config config.yaml
+pipeline4onePhoton merge --config config.yaml
 
 # Or run all downstream pipelines
-1p-spatial-pipeline run-all --config config.yaml --mode both
+pipeline4onePhoton run-all --config config.yaml --mode both
 ```
 
 Note: You can also use `--cnmfe-mat` CLI flag to override the config value.

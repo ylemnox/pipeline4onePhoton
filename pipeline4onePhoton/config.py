@@ -1,5 +1,5 @@
 """
-Configuration handling for 1p-spatial-pipeline.
+Configuration handling for pipeline4onePhoton.
 
 Loads and validates YAML configuration files with sensible defaults.
 """
@@ -218,9 +218,9 @@ def generate_config_template(
     Returns:
         Configuration template as string
     """
-    template = f'''# 1p-spatial-pipeline Configuration
+    template = f'''# pipeline4onePhoton Configuration
 # Generated for experiment: {experiment_name}
-# See documentation at: https://github.com/ylemnox/1p-spatial-pipeline
+# See documentation at: https://github.com/ylemnox/pipeline4onePhoton
 
 # =============================================================================
 # EXPERIMENT SETTINGS
@@ -286,7 +286,7 @@ nidq:
   # Path to NIDQ metadata file
   meta_file: "./data/20251231_{experiment_name}_g0_t0.nidq.meta"
 
-  # --- Channel Assignments (determine via '1p-spatial-pipeline nidq' command) ---
+  # --- Channel Assignments (determine via 'pipeline4onePhoton nidq' command) ---
   # Bit number for miniscope sync signal
   sync_bit: 2
 

@@ -1,5 +1,5 @@
 """
-I/O utility functions for 1p-spatial-pipeline.
+I/O utility functions for pipeline4onePhoton.
 
 Handles reading/writing MAT files, CSV files, NIDQ binary files, and metadata.
 """

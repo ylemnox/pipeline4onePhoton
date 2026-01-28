@@ -1,14 +1,14 @@
 """
-Command-line interface for 1p-spatial-pipeline.
+Command-line interface for pipeline4onePhoton.
 
 Usage:
-    1p-spatial-pipeline info                    # Show pipeline overview
-    1p-spatial-pipeline init                    # Generate config template
-    1p-spatial-pipeline nidq --config ...       # Visualize NIDQ channels (Pipeline C)
-    1p-spatial-pipeline merge --config ...      # Merge all data (Pipeline D)
-    1p-spatial-pipeline extract --config ...    # Extract active cells (Pipeline E)
-    1p-spatial-pipeline analyze --config ...    # Place field analysis (Pipeline F)
-    1p-spatial-pipeline run-all --config ...    # Run full pipeline (D -> E -> F)
+    pipeline4onePhoton info                    # Show pipeline overview
+    pipeline4onePhoton init                    # Generate config template
+    pipeline4onePhoton nidq --config ...       # Visualize NIDQ channels (Pipeline C)
+    pipeline4onePhoton merge --config ...      # Merge all data (Pipeline D)
+    pipeline4onePhoton extract --config ...    # Extract active cells (Pipeline E)
+    pipeline4onePhoton analyze --config ...    # Place field analysis (Pipeline F)
+    pipeline4onePhoton run-all --config ...    # Run full pipeline (D -> E -> F)
 
 Note: Pipelines A (DeepLabCut) and B (CNMF-E) must be run externally via the
 provided Jupyter notebooks before using this CLI.
@@ -37,7 +37,7 @@ console = Console()
 
 
 PIPELINE_DIAGRAM = """
-[bold cyan]1p-spatial-pipeline: One-Photon Spatial Coding Analysis[/bold cyan]
+[bold cyan]pipeline4onePhoton: One-Photon Spatial Coding Analysis[/bold cyan]
 
 [dim]External (run separately via notebooks):[/dim]
   [yellow]Pipeline A[/yellow]: DeepLabCut (behavior extraction from webcam)
@@ -75,7 +75,7 @@ PIPELINE_DIAGRAM = """
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="1p-spatial-pipeline")
+@click.version_option(version=__version__, prog_name="pipeline4onePhoton")
 def main():
     """
     One-photon spatial coding analysis pipeline.
@@ -89,7 +89,7 @@ def main():
 @main.command()
 def info():
     """Show pipeline overview and data flow diagram."""
-    console.print(Panel(PIPELINE_DIAGRAM, title="1p-spatial-pipeline", border_style="blue"))
+    console.print(Panel(PIPELINE_DIAGRAM, title="pipeline4onePhoton", border_style="blue"))
 
 
 @main.command()
@@ -117,10 +117,10 @@ def init(experiment: str, output: str):
     console.print(f"[green]Configuration template created:[/green] {output_path}")
     console.print("\n[dim]Next steps:[/dim]")
     console.print("  1. Edit the configuration file with your paths and parameters")
-    console.print("  2. Run [cyan]1p-spatial-pipeline nidq --config config.yaml[/cyan] to determine channel assignments")
-    console.print("  3. Run [cyan]1p-spatial-pipeline merge --config config.yaml[/cyan] to merge data")
-    console.print("  4. Run [cyan]1p-spatial-pipeline extract --config config.yaml[/cyan] to extract active cells")
-    console.print("  5. Run [cyan]1p-spatial-pipeline analyze --config config.yaml[/cyan] for place field analysis")
+    console.print("  2. Run [cyan]pipeline4onePhoton nidq --config config.yaml[/cyan] to determine channel assignments")
+    console.print("  3. Run [cyan]pipeline4onePhoton merge --config config.yaml[/cyan] to merge data")
+    console.print("  4. Run [cyan]pipeline4onePhoton extract --config config.yaml[/cyan] to extract active cells")
+    console.print("  5. Run [cyan]pipeline4onePhoton analyze --config config.yaml[/cyan] for place field analysis")
 
 
 @main.command()

@@ -1,4 +1,4 @@
-# 1p-spatial-pipeline
+# pipeline4onePhoton
 
 A user-friendly CLI pipeline for one-photon spatial coding analysis with v4 miniscope recordings, behavior tracking, and NIDQ synchronization signals.
 
@@ -26,27 +26,27 @@ Pipeline Overview:
 ### Place Cell Heatmap (Left Direction)
 Place fields sorted by peak location, showing spatial tuning of identified place cells:
 
-![Place Cells Heatmap](examples/place_cells_heatmap_L_S.png)
+<img src="examples/place_cells_heatmap_L_S.png" width="600">
 
 ### Combined L/R Direction Comparison
 L-place cells shown in both directions with joint normalization to compare directional selectivity:
 
-![Combined Heatmap](examples/combined_heatmap_sorted_by_L_S.png)
+<img src="examples/combined_heatmap_sorted_by_L_S.png" width="700">
 
 ### Session-Wide Firing Rate
 Normalized firing rate across all trials aggregated by position:
 
-![Session Firing Rate](examples/session_firing_rate_normalized_S.png)
+<img src="examples/session_firing_rate_normalized_S.png" width="600">
 
 ### Summary Statistics
 Overview of place cell identification results including mutual information distribution:
 
-![Summary Statistics](examples/place_cell_summary_S.png)
+<img src="examples/place_cell_summary_S.png" width="700">
 
 ### NIDQ Channel Visualization
 Digital channel preview for identifying sync, trigger, and reward signals:
 
-![NIDQ Preview](examples/nidq_channel_preview.png)
+<img src="examples/nidq_channel_preview.png" width="600">
 
 ## Installation
 
@@ -54,8 +54,8 @@ Digital channel preview for identifying sync, trigger, and reward signals:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/ylemnox/1p-spatial-pipeline.git
-cd 1p-spatial-pipeline
+git clone https://github.com/ylemnox/pipeline4onePhoton.git
+cd pipeline4onePhoton
 
 # 2. Create and activate virtual environment
 python3 -m venv venv
@@ -65,7 +65,7 @@ source venv/bin/activate
 pip install -e .
 
 # 4. Verify installation
-1p-spatial-pipeline info
+pipeline4onePhoton info
 ```
 
 ### For Pipelines A and B (External)
@@ -81,18 +81,18 @@ See [docs/pipeline_a_deeplabcut.md](docs/pipeline_a_deeplabcut.md) and [docs/pip
 
 ```bash
 # 1. Show pipeline overview
-1p-spatial-pipeline info
+pipeline4onePhoton info
 
 # 2. Generate configuration template
-1p-spatial-pipeline init --experiment MY01_20251231 --output config.yaml
+pipeline4onePhoton init --experiment MY01_20251231 --output config.yaml
 
 # 3. Edit config.yaml with your paths and parameters
 
 # 4. Visualize NIDQ channels to determine sync/trigger assignments
-1p-spatial-pipeline nidq --config config.yaml
+pipeline4onePhoton nidq --config config.yaml
 
 # 5. Run full pipeline (or individual steps)
-1p-spatial-pipeline run-all --config config.yaml --mode both
+pipeline4onePhoton run-all --config config.yaml --mode both
 ```
 
 ## Pipeline Components
@@ -124,7 +124,7 @@ cnmfe:
 ### Pipeline C: NIDQ Signal Processing
 
 ```bash
-1p-spatial-pipeline nidq --config config.yaml
+pipeline4onePhoton nidq --config config.yaml
 ```
 
 Visualizes digital channels to help identify:
@@ -138,7 +138,7 @@ Visualizes digital channels to help identify:
 ### Pipeline D: Data Merge
 
 ```bash
-1p-spatial-pipeline merge --config config.yaml
+pipeline4onePhoton merge --config config.yaml
 ```
 
 Merges all data sources with proper temporal alignment.
@@ -153,7 +153,7 @@ Merges all data sources with proper temporal alignment.
 ### Pipeline E: Active Cell Extraction
 
 ```bash
-1p-spatial-pipeline extract --config config.yaml --mode S  # or C, or both
+pipeline4onePhoton extract --config config.yaml --mode S  # or C, or both
 ```
 
 Processes merged data to:
@@ -172,7 +172,7 @@ Processes merged data to:
 ### Pipeline F: Place Field Analysis
 
 ```bash
-1p-spatial-pipeline analyze --config config.yaml --mode S  # or C, or both
+pipeline4onePhoton analyze --config config.yaml --mode S  # or C, or both
 ```
 
 Analyzes place fields and identifies place cells:
@@ -197,7 +197,7 @@ Analyzes place fields and identifies place cells:
 Configuration is managed through a YAML file. Generate a template with:
 
 ```bash
-1p-spatial-pipeline init --experiment MY01_20251231 --output config.yaml
+pipeline4onePhoton init --experiment MY01_20251231 --output config.yaml
 ```
 
 Key parameters:
@@ -217,7 +217,7 @@ cnmfe:
 
 nidq:
   bin_file: "./data/experiment.nidq.bin"
-  sync_bit: 2      # Determine via '1p-spatial-pipeline nidq'
+  sync_bit: 2      # Determine via 'pipeline4onePhoton nidq'
   trigger_bit: 1
   reward_left_bit: 4
   reward_right_bit: 3
@@ -281,8 +281,8 @@ If you use this pipeline in your research, please cite:
 
 ```bibtex
 @software{1p_spatial_pipeline,
-  title = {1p-spatial-pipeline: A CLI for one-photon spatial coding analysis},
-  url = {https://github.com/ylemnox/1p-spatial-pipeline},
+  title = {pipeline4onePhoton: A CLI for one-photon spatial coding analysis},
+  url = {https://github.com/ylemnox/pipeline4onePhoton},
   year = {2025}
 }
 ```

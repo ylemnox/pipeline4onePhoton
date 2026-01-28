@@ -1,6 +1,6 @@
-# 1p-spatial-pipeline Configuration
+# pipeline4onePhoton Configuration
 # Copy this file to config.yaml and edit for your experiment
-# See documentation at: https://github.com/ylemnox/1p-spatial-pipeline
+# See documentation at: https://github.com/ylemnox/pipeline4onePhoton
 
 # =============================================================================
 # EXPERIMENT SETTINGS
@@ -91,7 +91,7 @@ nidq:
   # Path to NIDQ metadata file
   meta_file: "/Users/davisk/Desktop/cnmf-E/20251231_MY01_rightM1_D-1_g0_t0.nidq.meta"
 
-  # --- Channel Assignments (determine via '1p-spatial-pipeline nidq' command) ---
+  # --- Channel Assignments (determine via 'pipeline4onePhoton nidq' command) ---
   # Bit number for miniscope sync signal
   sync_bit: 2
 
