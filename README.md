@@ -1,5 +1,6 @@
 # pipeline4onePhoton
 
+<img src="https://github.com/ylemnox/pipeline4onePhoton/examples/pipeline4onePhoton_logo.png" width="200" align="right">
 A user-friendly CLI pipeline for one-photon spatial coding analysis with v4 miniscope recordings, behavior tracking, and NIDQ synchronization signals.
 
 ## Overview
