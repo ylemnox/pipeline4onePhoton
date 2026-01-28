@@ -1,7 +1,8 @@
 # pipeline4onePhoton
 
-<img src="https://github.com/ylemnox/pipeline4onePhoton/examples/pipeline4onePhoton_logo.png" width="200" align="right">
-A user-friendly CLI pipeline for one-photon spatial coding analysis with v4 miniscope recordings, behavior tracking, and NIDQ synchronization signals.
+<img src="/examples/pipeline4onePhoton_logo.png" width="170" align="right">
+
+A CLI pipeline for one-photon spatial coding analysis with v4 miniscope recordings, behavior tracking, and NIDQ synchronization signals. Pipeline4onePhoton merges different types of data into one format by synchronizing the timeline. It also provides several analysis functions for filtering spatial-coding cells and visualization of downstream analysis.
 
 ## Overview
 
