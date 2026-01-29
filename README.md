@@ -257,27 +257,3 @@ Optional:
 This project is licensed under the BSD 3-Clause License - see [LICENSE](LICENSE) for details.
 
 **Note**: The CNMF-E notebook (`notebooks/cnmfE_pipeline.ipynb`) uses [CaImAn](https://github.com/flatironinstitute/CaImAn) which is licensed under GPL-2.0. See `notebooks/LICENSE.GPL` for details.
-
-## Citation
-
-If you use this pipeline in your research, please cite:
-
-```bibtex
-@software{1p_spatial_pipeline,
-  title = {pipeline4onePhoton: A CLI for one-photon spatial coding analysis},
-  url = {https://github.com/ylemnox/pipeline4onePhoton},
-  year = {2025}
-}
-```
-
-Also cite the underlying tools:
-- [CaImAn](https://github.com/flatironinstitute/CaImAn) for CNMF-E
-- [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut) for behavior tracking
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## Support
-
-For questions or issues, please open an issue on GitHub.
