@@ -131,6 +131,10 @@ Merges all data sources with proper temporal alignment.
 - CNMF-E MAT from Pipeline B
 - NIDQ signals from Pipeline C
 
+_**Check if the input file paths in `config.yaml` are correct.**_
+
+_**Verify the path to `metaData.json` found in the root of the experiment directory (e.g., 'MY_251231', parent directory of 'My_WebCam', 'My_V4_Miniscope', etc.).**_
+
 **Output**: Merged MAT file with aligned calcium, position, and trial data
 
 ### Pipeline E: Active Cell Extraction
